@@ -49,14 +49,13 @@ router.get('/edit/:_id',function(req,res)
         book
     })
     */
-   Books.findOne({_id: req.params._id},function(err,book){
-       res.render('editBook',{title:'edit book',book : book});
-       
-    })
+   Books.findOne({_id: req.params._id}, function(err, book){
+    res.render('editBook',{title:'Edit Books', book: book});
+})
 });
 
-router.post('/edit/:_id',function(req,res){
-    Books.findOneAndUpdate({_id: req.params._id},{$set:req.body },function(err,book){
+router.post('/edited/:id',function(req,res){
+    Books.findOneAndUpdate({id: req.params._id},{ $set: req.body },function(err,book){
         //res.render('editBook',{title:'edit book',book : book});
         console.log(book);
         res.redirect('/');

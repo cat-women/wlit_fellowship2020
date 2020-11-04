@@ -16,4 +16,14 @@ router.get('/', function(req, res, next) {
  });
 });
 
+/*
+router.get('/', async function(req, res, next) {
+ // res.render('index', { title: 'Book DB',booksList: books });
+ let book = await Books.find();
+ res.render('index',{ title:"Book App", bookList: books});
+ });
+
+
+
+*/
 module.exports = router;
