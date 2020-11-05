@@ -55,7 +55,7 @@ router.get('/edit/:_id',function(req,res)
 });
 
 router.post('/edited/:id',function(req,res){
-    Books.findOneAndUpdate({id: req.params._id},{ $set: req.body },function(err,book){
+    Books.findOneAndUpdate({_id: req.params.id},{ $set: req.body },function(err,book){
         //res.render('editBook',{title:'edit book',book : book});
         console.log(book);
         res.redirect('/');
